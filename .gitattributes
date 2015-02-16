@@ -1,0 +1,2 @@
+#pattern  filter=crypt diff=crypt
+sendgrid.json  filter=crypt diff=crypt
