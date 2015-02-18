@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+filename=$1
+cipher=$(git config --get --local transcrypt.cipher)
+password=$(git config --get --local transcrypt.password)
+salt=$(openssl dgst -hmac "${filename}:${password}" -sha256 "$filename" | tail -c 16)
+ENC_PASS=$password openssl enc -$cipher -pass env:ENC_PASS -e -a -S $salt

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+filename=$1
+cipher=$(git config --get --local transcrypt.cipher)
+password=$(git config --get --local transcrypt.password)
+ENC_PASS=$password openssl enc -$cipher -pass env:ENC_PASS -d -a -in "$filename" 2> /dev/null || cat $filename
