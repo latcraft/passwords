@@ -1,3 +1,3 @@
-#pattern  filter=crypt diff=crypt
-*.json  filter=crypt diff=crypt
-*.yml  filter=crypt diff=crypt
+*.json filter=crypt diff=crypt
+*.properties filter=crypt diff=crypt
+*.yml filter=crypt diff=crypt
